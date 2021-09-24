@@ -1,0 +1,13 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: 'config-server'
+  cloud:
+    config:
+      server:
+        git:
+          uri: ENDEREÇO DO GIT AQUI
+          search-paths:
+            - 'cliente-config*'
