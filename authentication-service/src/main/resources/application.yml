@@ -1,0 +1,32 @@
+server:
+  port: 8889
+jwt:
+  secret: secreta789d789asd789ad78as78das89d7as89das79d87as89das798ds7a89d7a98d7sa9d8sa98da78d9as798d
+  jwtExp: 86400000
+  refreshExp: 86400000
+spring:
+  application:
+    name: authentication-service
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/deliveryclienteregister?useTimezone=true&serverTimezone=UTC
+    username: root
+    password: 123456aBc!
+  jpa:
+    properties.hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true
+  cloud:
+    features:
+      enabled: true
+    discovery:
+      enabled: true
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaulZone: http://localhost:8761/eureka
+    register-with-eureka: true
+    fetch-registry: true
