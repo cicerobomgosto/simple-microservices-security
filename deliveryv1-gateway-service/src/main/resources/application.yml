@@ -1,0 +1,52 @@
+spring:
+  application:
+    name: 'gateway-service'
+  cloud:
+    gateway:
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+#  cloud:
+#    config:
+#      enabled: true
+#    gateway:
+#      discovery:
+#        locator:
+#          enabled: true
+#      routes:
+#        - id: cliente-service
+#          uri: lb://cliente-service
+#          predicates:
+#            - Path=/cliente-service/**
+#        - id: mercado-service
+#          uri: lb://mercado-service
+#          predicates:
+#            - Path=/mercado-service/**
+#        - id: openapi
+#          uri: lb://gateway-service
+#          predicates:
+#            - Path=/v3/api-docs/**
+#          filters:
+#            - RewritePath=/v3/api-docs/(?<path>.*), /$\{path}/v3/api-docs
+  sleuth:
+    sampler:
+      probability: 1.0
+#  devtools:
+#    add-properties: false
+server:
+  port: 8765
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaulZone: http://localhost:8761/eureka
+    register-with-eureka: true
+    fetch-registry: true
+jwt:
+  secret: secreta789d789asd789ad78as78das89d7as89das79d87as89das798ds7a89d7a98d7sa9d8sa98da78d9as798d
