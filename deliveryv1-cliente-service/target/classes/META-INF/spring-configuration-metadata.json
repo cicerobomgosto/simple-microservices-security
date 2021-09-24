@@ -1,0 +1,11 @@
+{
+  "groups": [
+    {
+      "name": "cliente-config",
+      "type": "br.com.brdev2w.deliveryv1clienteservice.ServerConfig.ClienteConfiguration",
+      "sourceType": "br.com.brdev2w.deliveryv1clienteservice.ServerConfig.ClienteConfiguration"
+    }
+  ],
+  "properties": [],
+  "hints": []
+}

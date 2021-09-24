@@ -1,0 +1,45 @@
+server:
+  port: 8000
+spring:
+  application:
+    name: cliente-service
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/deliverytesteregister?useTimezone=true&serverTimezone=UTC
+    username: root
+    password: 123456aBc!
+  jpa:
+    properties.hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true
+  sleuth:
+    sampler:
+      probability: 1.0
+  cloud:
+    config:
+      enabled: false
+management:
+  health:
+    diskspace:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include:
+          - '*'
+#springdoc:
+#  api-docs:
+#    path: cliente-service/v3/api-docs
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaulZone: http://localhost:8761/eureka
+    register-with-eureka: true
+    fetch-registry: true
+jwt:
+  secret: secreta789d789asd789ad78as78das89d7as89das79d87as89das798ds7a89d7a98d7sa9d8sa98da78d9as798d
+  jwtExp: 86400000
+  refreshExp: 86400000
